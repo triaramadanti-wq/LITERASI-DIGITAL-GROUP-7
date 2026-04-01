@@ -56,8 +56,8 @@ void konversiBerat()
                     printf(BLUE"=================\n"RESET);
                     printf(GREEN" HASIL KONVERSI \n"RESET);
                     printf(BLUE"=================\n"BLUE);
-                    printf(GREEN"Gram: %.2f g\n", kg * 1000);
-                    printf("Pons: %.2f pons\n"RESET, kg * 10);
+                    printf(GREEN"Hasil: %.2f kg = %.2f gram\n"RESET, kg, kg * 1000);
+                    printf(GREEN"Hasil: %.2f kg = %.2f pons\n"RESET, kg, kg * 10);
                     break;
                 default:
                     printf(BLUE"=================\n"RESET);
