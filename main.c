@@ -1,172 +1,35 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void konversiSuhu(){
-    int kon, versi;
-    float suhu, hasil;
+void konversiSuhu();
+void konversiJarak();
+void konversiBerat();
+void konversiWaktu(){
+      int jam,menit,detik,pilihan,hasil;
 
-    printf("===============\nMasukan suhu = ");
-    scanf("%f", &suhu);
+    printf("Masukkan jumlah jam: ");
+    scanf("%d", &jam);
 
-    printf("---------------\nKonversi \n1. Celcius\n2. Fahreinheit\n3. Kelvin\n= ");
-    scanf("%d", &kon);
-
-    switch (kon) {
-    case 1:
-        printf("---------------\nMenjadi \n1. Fahreinheit\n2. Kelvin\n= ");
-        scanf("%d", &versi);
-        if (versi == 1)
-            hasil = (suhu * 9/5) + 32;
-        else if (versi == 2)
-            hasil = suhu + 273;
-        else
-            hasil = suhu;
-        break;
-    case 2:
-        printf("---------------\nMenjadi \n1. Celcius\n2. Kelvin\n= ");
-        scanf("%d", &versi);
-        if (versi == 1)
-            hasil = (suhu - 32) * 5 / 9;
-        else if (versi == 2)
-            hasil = (suhu - 32) * 5 / 9 + 273;
-        else
-            hasil = suhu;
-        break;
-    case 3:
-        printf("---------------\nMenjadi \n1. Celcius\n2. Fahreinheit\n= ");
-        scanf("%d", &versi);
-        if (versi == 1)
-            hasil = suhu - 273;
-        else if (versi == 2)
-            hasil = (suhu - 273) * 9 / 5 + 32;
-        else
-            hasil = suhu;
-        break;
-    default:
-        break;
+    printf("\n Pilih Konversi: \n");
+    printf ("1. Ke Menit");
+    printf ("2. Ke Detik");
+    printf ("Masukkan pilihan (1/2) :");
+    scanf ("%d", &pilihan);
+    
+    
+    if ( pilihan == 1 ) {
+        hasil = jam * 60;
+        printf ("%d jam = %d menit\n", jam,hasil);
     }
-
-    if (hasil == suhu)
-        printf("Tolong input ulang");
-    else
-        printf("---------------\n%.2f\n", hasil);
-}
-
-void konversiJarak(){}
-void konversiBerat(){}
-void konversiWaktu(){}
-#define BLK "\e[0;30m"
-#define RED "\e[0;31m"
-#define GRN "\e[0;32m"
-#define YEL "\e[0;33m"
-#define BLU "\e[0;34m"
-#define MAG "\e[0;35m"
-#define CYN "\e[0;36m"
-#define WHT "\e[0;37m"
-#define RESET "\e[0m"
-
-void konversiSuhu() {
-    int pilihan;
-    float nilai, hasil;
-
-    printf("\n-- Konversi Suhu --\n");
-    printf("1. Celsius ke Fahrenheit\n");
-    printf("2. Fahrenheit ke Celsius\n");
-    printf("Pilih menu: ");
-    scanf("%d", &pilihan);
-
-    printf("Masukkan suhu: ");
-    scanf("%f", &nilai);
-
-    if (pilihan == 1) {
-        hasil = (nilai * 9 / 5) + 32;
-        printf("Hasil: %.2f F\n", hasil);
-    } else if (pilihan == 2) {
-        hasil = (nilai - 32) * 5 / 9;
-        printf("Hasil: %.2f C\n", hasil);
-    } else {
-        printf("Pilihan tidak valid!\n");
+    else if (pilihan == 2) {
+        hasil = jam * 3600;
+        printf("%d jam = %d detik\n", jam,hasil);
     }
-}
-
-void konversiJarak() {
-    int pilihan;
-    float nilai, hasil;
-
-    printf("\n-- Konversi Jarak --\n");
-    printf("1. Meter ke Kilometer\n");
-    printf("2. Kilometer ke Meter\n");
-    printf("3. Meter ke Centimeter\n");
-    printf("Pilih menu: ");
-    scanf("%d", &pilihan);
-
-    printf("Masukkan nilai: ");
-    scanf("%f", &nilai);
-
-    if (pilihan == 1) {
-        hasil = nilai / 1000;
-        printf("Hasil: %.2f km\n", hasil);
-    } else if (pilihan == 2) {
-        hasil = nilai * 1000;
-        printf("Hasil: %.2f m\n", hasil);
-    } else if (pilihan == 3) {
-        hasil = nilai * 100;
-        printf("Hasil: %.2f cm\n", hasil);
-    } else {
-        printf("Pilihan tidak valid!\n");
-    }
-}
-
-void konversiBerat() {
-    int pilihan;
-    float nilai, hasil;
-
-    printf("\n-- Konversi Berat --\n");
-    printf("1. Kilogram ke Gram\n");
-    printf("2. Gram ke Kilogram\n");
-    printf("Pilih menu: ");
-    scanf("%d", &pilihan);
-
-    printf("Masukkan nilai: ");
-    scanf("%f", &nilai);
-
-    if (pilihan == 1) {
-        hasil = nilai * 1000;
-        printf("Hasil: %.2f gram\n", hasil);
-    } else if (pilihan == 2) {
-        hasil = nilai / 1000;
-        printf("Hasil: %.2f kg\n", hasil);
-    } else {
-        printf("Pilihan tidak valid!\n");
-    }
-}
-
-void konversiWaktu() {
-    int pilihan;
-    float nilai, hasil;
-
-    printf("\n-- Konversi Waktu --\n");
-    printf("1. Jam ke Menit\n");
-    printf("2. Jam ke Detik\n");
-    printf("3. Menit ke Jam\n");
-    printf("Pilih menu: ");
-    scanf("%d", &pilihan);
-
-    printf("Masukkan nilai: ");
-    scanf("%f", &nilai);
-
-    if (pilihan == 1) {
-        hasil = nilai * 60;
-        printf("Hasil: %.2f menit\n", hasil);
-    } else if (pilihan == 2) {
-        hasil = nilai * 3600;
-        printf("Hasil: %.2f detik\n", hasil);
-    } else if (pilihan == 3) {
-        hasil = nilai / 60;
-        printf("Hasil: %.2f jam\n", hasil);
-    } else {
-        printf("Pilihan tidak valid!\n");
-    }
+    else {
+        printf ("Pilihan tidak valid");
+    } 
+    
+    return 0;
 }
 
 int main(){
@@ -233,4 +96,3 @@ int main(){
     } while(pilihan != 5);
     return 0;
 }
-
