@@ -36,13 +36,40 @@ int main(){
     int pilihan;
 
     do {
-        printf("\n === KALKULATOR KONVERSI SATUAN ===");
+        printf("\n === KALKULATOR KONVERSI SATUAN ===\n");
         printf("1. konversi suhu\n");
+        printf(BLU "\n === KALKULATOR KONVERSI SATUAN ===\n" RESET);
+        printf(GRN "1. konversi suhu\n");
         printf("2. konversi jarak\n");
         printf("3. konversi berat\n");
         printf("4. konversi waktu\n");
+        printf("5. keluar\n");
+        printf("==>> " RESET);
 
-        scanf("%d", pilihan);
+        scanf("%d", &pilihan);
+
+         switch (pilihan) {
+        case 1:
+            konversiSuhu();
+            break;
+        case 2:
+            konversiJarak();
+            break;
+        case 3:
+            konversiBerat();
+            break;
+        case 4:
+            konversiWaktu();
+            break;
+        case 5:
+            printf("\nKeluar\n");
+            break;
+        default:
+            printf("\nPilihan tidak valid!\n");
+            break;
+    }
+
+        scanf("%d", &pilihan);
 
         switch(pilihan) {
             case 1:
@@ -63,6 +90,9 @@ int main(){
             default:
                 printf("Pilihan tidak valid!\n");
         }
+        printf("Tekan Enter untuk melanjutkan...");
+        getchar();
+        getchar();
     } while(pilihan != 5);
     return 0;
 }
