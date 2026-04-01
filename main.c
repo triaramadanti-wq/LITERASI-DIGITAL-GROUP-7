@@ -1,10 +1,25 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void konversiSuhu();
-void konversiJarak();
-void konversiBerat();
-void konversiWaktu();
+void konversiSuhu(){}
+void konversiJarak(){}
+void konversiBerat(){
+
+    float kg;
+
+        printf("\n=== Konversi Berat ===\n");
+        printf("Masukkan berat (kg): ");
+        scanf("%f", &kg);
+
+        float gram = kg * 1000;
+        float pons = kg * 10;
+
+        printf("\nHasil Konversi:\n");
+        printf("Gram: %.2f g\n", gram);
+        printf("Pons: %.2f pons\n", pons);
+}
+
+void konversiWaktu(){}
 
 int main(){
     int pilihan;
@@ -16,7 +31,7 @@ int main(){
         printf("3. konversi berat\n");
         printf("4. konversi waktu\n");
 
-        scanf("%d", pilihan);
+        scanf("%d", &pilihan);
 
         switch(pilihan) {
             case 1:
