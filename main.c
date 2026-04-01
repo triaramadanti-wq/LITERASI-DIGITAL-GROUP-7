@@ -10,7 +10,11 @@ void konversiBerat(){
         printf("\n=== Konversi Berat ===\n");
         printf("Masukkan berat (kg): ");
         scanf("%f", &kg);
-
+        
+            if (kg < 0) {
+            printf("Input tidak valid!\n");
+            return;
+}
         float gram = kg * 1000;
         float pons = kg * 10;
 
