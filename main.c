@@ -3,7 +3,8 @@
 
 void konversiSuhu(){}
 void konversiJarak(){}
-void konversiBerat(){
+void konversiBerat()
+{
 
     float kg;
 
@@ -11,30 +12,54 @@ void konversiBerat(){
         printf("Masukkan berat (kg): ");
         scanf("%f", &kg);
         
-            if (kg < 0) {
+            if (kg < 0) 
+            {
             printf("Input tidak valid!\n");
             return;
-}
-        float gram = kg * 1000;
-        float pons = kg * 10;
+            }
+    int pilihan;
+        while (1)
+        {
+        
+        printf("\nPilih jenis konversi:\n");
+        printf("1. Kilogram ke Gram\n");
+        printf("2. Kilogram ke Pons\n");
+        printf("3. Keduanya\n");
+        printf("Pilih (1-3): ");
+        scanf("%d", &pilihan);
 
-        printf("\nHasil Konversi:\n");
-        printf("Gram: %.2f g\n", gram);
-        printf("Pons: %.2f pons\n", pons);
+            switch(pilihan) 
+            {
+                case 1:
+                    printf("Hasil: %.2f kg = %.2f gram\n", kg, kg * 1000);
+                    break;
+                case 2:
+                    printf("Hasil: %.2f kg = %.2f pons\n", kg, kg * 10);
+                    break;
+                case 3:
+                    printf("Gram: %.2f g\n", kg * 1000);
+                    printf("Pons: %.2f pons\n", kg * 10);
+                    break;
+                default:
+                    printf("Pilihan tidak valid!\n");
+                    continue;
+         
+               }
+               break;
+        }
 }
-
 void konversiWaktu(){}
 
 int main(){
     int pilihan;
 
     do {
-        printf("\n === KALKULATOR KONVERSI SATUAN ===");
+        printf("\n === KALKULATOR KONVERSI SATUAN ===\n");
         printf("1. konversi suhu\n");
         printf("2. konversi jarak\n");
         printf("3. konversi berat\n");
         printf("4. konversi waktu\n");
-
+        printf("masukan pilihan : ");
         scanf("%d", &pilihan);
 
         switch(pilihan) {
